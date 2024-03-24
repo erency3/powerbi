@@ -1,0 +1,29 @@
+Summary
+
+
+Austin Housing and Community Insights is a tool that offers comprehensive information about housing dynamics in Austin for the year 2024. It provides details such as the latest sale prices of homes, with prices adjusted for compound inflation based on the year of sale to estimate 2024 prices. Additionally, the tool includes school ratings associated with each home ID, as well as population and crime data aggregated by zip code, offering valuable insights into the community's characteristics. Use filter pane to filter by Certain features.
+Data 
+
+Data
+
+Housing/School
+
+raw data: https://www.kaggle.com/datasets/ericpierce/austinhousingprices
+Data transformed into star schema.
+I created an Azure blob storage to link each image for the houses.
+
+Crime
+
+raw data: https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu/about_data
+Serious Crimes Were filtered(According to FBI definitions) for the report as since this is what customers intered in."For the crime numbers comparisons should not be made between numbers generated with this report and to any other official police reports. Data provided represents only calls for police service where a report was written. Totals in the database may vary considerably from official totals following investigation and final categorization." So there may be false positives in the data.
+Data is aggregated to join by zip code.
+
+Population
+
+raw data: https://localistica.com/usa/tx/austin/zipcodes/most-populated-zipcodes/ 4 missing zipcodes completed from google searches.
+The data is used to calculate the crime rate by zipcode.
+
+Home Price inflation in Austin
+
+gathered online for each year.
+Applied to the model with dax formulas to find inflated prices example:
